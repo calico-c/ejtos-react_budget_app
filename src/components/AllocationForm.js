@@ -8,7 +8,13 @@ const AllocationForm = (props) => {
     const [cost, setCost] = useState('');
     const [action, setAction] = useState('');
 
-    const submitEvent = () => {
+    const submitEvent = (fact) => {
+            fact = isNaN(cost)
+            if(fact) {
+                alert("The value must be a number");
+                setCost("");
+                return;
+            }
 
             if(cost > remaining) {
                 alert("The value cannot exceed remaining funds  £"+remaining);
@@ -61,7 +67,7 @@ const AllocationForm = (props) => {
 
                     <input
                         required='required'
-                        type='number'
+                        // type='number'
                         id='cost'
                         value={cost}
                         style={{ marginLeft: '2rem' , size: 10}}
