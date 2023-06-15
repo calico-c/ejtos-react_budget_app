@@ -11,22 +11,30 @@ const Currency = () => {
             payload: val,
         })
 	}
-	return (
-        <div>
-        <div className='row'>
-            <div className="input-group mb-3" style={{ marginLeft: '2rem' }}>
-                <div className="input-group-prepend">
-                    <label className="input-group-text" htmlFor="inputGroupSelect01">Currency</label>
-                </div>
-                <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setName(event.target.value)}>
-                    <option defaultValue>Choose...</option>
-                    <option value="$" name="dollar">$ Dollar</option>
-                    <option value="£" name="pound">£ Pound</option>
-                    <option value="€" name="euro">€ Euro</option>
-                    <option value="₹" name="rupee">₹ Ruppee</option>
-                </select>
-            </div>    
-        </div>
+
+    const customStyles = {
+        option: ( { data, isDisabled, isFocused, isSelected }) => {
+        return {
+          backgroundColor: "#white"
+        };
+      }
+    };
+    
+    return (
+        <div className='alert alert-secondary'>  
+        <span>
+          <select 
+            className='btn btn-success dropdown-toggle'
+            id='currency'
+            style={{ marginLeft: '1rem' , backgroundColor:'#a5e2a0', color:'white', border: '#a5e2a0'}}
+            onChange={(event) =>changeCurrency(event)}>Currency ({currency})
+              <option style={{color:'black'}} defaultValue={currency}>Currency ({currency} Pound)</option>
+              <option style={{color:'black'}} value='£'>£ Pound</option>
+              <option style={{color:'black'}} value='$'>$ Dollar</option>
+              <option style={{color:'black'}} value='€'>€ Euro</option>
+              <option style={{color:"#5cb85c"}} value='₹'>₹ Rupee</option>
+          </select>
+          </span>
         </div>
 	);
 };
