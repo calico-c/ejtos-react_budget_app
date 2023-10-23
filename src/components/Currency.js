@@ -7,7 +7,7 @@ const Currency = () => {
     
     const changeCurrency = (val)=>{
         dispatch({
-            type: 'SET_CURRENCY',
+            type: 'CHG_CURRENCY',
             payload: val,
         })
 	}
@@ -20,8 +20,7 @@ const Currency = () => {
 
     
     return (
-
-		<div className='alert alert-secondary'>
+		<div className='alert alert-secondary' style={{backgroundColor:'#a5e2a0'}}>
         <label style={{marginLeft: '1rem' , backgroundColor:'#a5e2a0', color:'white'}} >Currency (
       <select name='hover_color'id="currency" onChange={(event)=>changeCurrency(event.target.value)} style={{backgroundColor:'#a5e2a0', color:'white'}}>
         <option style={{color:'black'}} value="£">£ Pound</option>
@@ -31,7 +30,6 @@ const Currency = () => {
       </select>	
         )</label>
     </div>
-
 	);
 };
 
