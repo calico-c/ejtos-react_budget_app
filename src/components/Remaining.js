@@ -8,7 +8,7 @@ const Remaining = () => {
     const alertType = totalExpenses > budget ? 'alert-danger' : 'alert-success';
     return (
         <div className={`alert ${alertType}`}>
-            <span>Remaining: {currency}{budget - totalExpenses}</span>
+            <span>Remaining: {currency.slice(0,1)}{budget - totalExpenses}</span>
         </div>
     );
 };

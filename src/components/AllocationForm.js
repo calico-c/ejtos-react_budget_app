@@ -67,7 +67,7 @@ const AllocationForm = (props) => {
                   {/* <label className="text-end me-1" htmlFor="cost" 
                             style={{ marginLeft: '2rem' , size: 10}}>{currency}</label> */}
                     
-                    <label for='cost'>{currency}</label><input
+                    <label for='cost'>{currency.slice(0,1)}</label><input
                         required='required'
                         // type='number'
                         name='cost'
